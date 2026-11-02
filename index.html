@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400&amp;family=Manrope:wght@400;500;600&amp;display=swap">
-<link rel="preload" as="image" href="assets/larissa-retrato.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/retrato-capa-hd.webp" imagesrcset="assets/retrato-capa-700.webp 700w, assets/retrato-capa-hd.webp 1400w" imagesizes="(max-width:959px) 100vw, 45vw" fetchpriority="high">
 <!-- Só dados confirmados. Ao confirmar CRO, endereço e telefone, acrescente "telephone" e "address.streetAddress". -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dra. Larissa Amaral","url":"https://paparidisbrancher.github.io/dra-larissa-amaral/","image":"https://paparidisbrancher.github.io/dra-larissa-amaral/assets/og-larissa.jpg","address":{"@type":"PostalAddress","addressLocality":"Três Pontas","addressRegion":"MG","addressCountry":"BR"},"areaServed":{"@type":"City","name":"Três Pontas"},"sameAs":["https://www.instagram.com/dralarissa.dentista/"]}</script>
 <style>
@@ -109,7 +109,7 @@ p{margin:0;text-wrap:pretty}
 .hero{padding:clamp(24px,4vw,56px) 0 clamp(72px,9vw,120px)}
 .hero .wrap{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
 .hero-foto{position:relative;margin:0;z-index:0}
-.hero-foto img{width:100%;aspect-ratio:630/522;object-fit:cover;object-position:60% 30%;background:var(--stone)}
+.hero-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;background:var(--stone)}
 .id{font-size:15px;font-weight:500;color:var(--mid);margin-bottom:20px}
 .hero h1{font-size:clamp(48px,7.6vw,104px);line-height:1.02;letter-spacing:-.03em;margin:0 0 28px}
 .hero .lead{margin-bottom:36px}
@@ -160,7 +160,7 @@ p{margin:0;text-wrap:pretty}
 /* Sobre */
 .sobre .wrap{display:grid;gap:44px;align-items:center}
 .sobre figure{margin:0;max-width:460px}
-.sobre img{width:100%;aspect-ratio:418/522;object-fit:cover;background:var(--stone)}
+.sobre img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--stone)}
 .dados{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin:36px 0 0;border-top:1px solid var(--linha)}
 .dados div{padding:16px 0;border-bottom:1px solid var(--linha)}
 .dados dt{font-size:14px;color:var(--mid);margin-bottom:4px}
@@ -234,6 +234,23 @@ details[open]::details-content{block-size:auto}
   *,*::before,*::after{transition-duration:0s!important}
   details::details-content{transition:none}
 }
+/* Resultados e vídeos */
+.galeria{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.galeria a{display:block}
+.galeria img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--stone);transition:opacity .2s ease}
+@media (hover:hover) and (pointer:fine){.galeria a:hover img{opacity:.9}}
+.nota{margin-top:14px;font-size:14px;color:var(--mid)}
+@media (max-width:699px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+.videos-cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 40px}
+.videos-cab .h2{margin-bottom:12px}
+.videos-faixa{list-style:none;display:grid;grid-auto-flow:column;grid-auto-columns:clamp(220px,22vw,270px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin:36px 0 0;padding:0 0 14px}
+.videos-faixa li{scroll-snap-align:start}
+.videos-faixa figure{margin:0}
+.videos-faixa video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:#111}
+.videos-faixa figcaption{margin-top:10px;font-size:15px;line-height:1.4}
+.videos-faixa figcaption span{display:block;font-size:13px;color:#BDBDBD}
+.escuro .videos-faixa a{color:#fff}
+@media (max-width:699px){.videos-faixa{grid-auto-columns:64vw;margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter);scroll-padding-inline:var(--gutter)}}
 </style>
 </head>
 <body>
@@ -248,6 +265,7 @@ details[open]::details-content{block-size:auto}
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#facetas">Facetas em resina</a></li>
+        <li><a href="#resultados">Resultados</a></li>
         <li><a href="#atendimento">Atendimento</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -261,7 +279,7 @@ details[open]::details-content{block-size:auto}
   <section class="hero" id="inicio">
     <div class="wrap">
       <figure class="hero-foto">
-        <img src="assets/larissa-retrato.webp" width="630" height="522" alt="Dra. Larissa Amaral sorrindo, com a mão próxima ao rosto, em fundo cinza de estúdio" fetchpriority="high">
+        <img src="assets/retrato-capa-hd.webp" srcset="assets/retrato-capa-700.webp 700w, assets/retrato-capa-hd.webp 1400w" sizes="(max-width:959px) 100vw, 45vw" width="1400" height="1750" alt="Dra. Larissa Amaral de blazer bordô, olhando para o lado, diante de uma parede de madeira" fetchpriority="high">
       </figure>
       <div class="hero-texto">
         <p class="id">Dra. Larissa Amaral · Três Pontas, MG</p>
@@ -288,7 +306,7 @@ details[open]::details-content{block-size:auto}
   <section class="sec sobre" id="sobre" aria-labelledby="t-sobre">
     <div class="wrap">
       <figure>
-        <img src="assets/larissa-sobre.webp" width="418" height="522" loading="lazy" decoding="async" alt="Retrato da Dra. Larissa Amaral sorrindo">
+        <img src="assets/retrato-sobre-hd.webp" srcset="assets/retrato-sobre-700.webp 700w, assets/retrato-sobre-hd.webp 1080w" sizes="(max-width:959px) 92vw, 40vw" width="1080" height="1350" loading="lazy" decoding="async" alt="Dra. Larissa Amaral sorrindo, de blusa preta">
       </figure>
       <div>
         <h2 class="h2" id="t-sobre">Prazer, Dra. Larissa Amaral.</h2>
@@ -318,6 +336,60 @@ details[open]::details-content{block-size:auto}
         <p>A indicação e o planejamento dependem de avaliação individual.</p>
         <a class="btn btn-cheio" href="https://wa.me/553598196989?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20agendamento." target="_blank" rel="noopener">Conversar sobre minha avaliação</a>
       </div>
+    </div>
+  </section>
+
+  <section class="sec" id="resultados" aria-labelledby="t-resultados">
+    <div class="wrap">
+      <h2 class="h2" id="t-resultados">Resultados</h2>
+      <p class="lead">Casos de facetas em resina atendidos pela Dra. Larissa, publicados no Instagram dela. Cada sorriso tem um planejamento próprio: o resultado depende da avaliação individual.</p>
+      <ul class="galeria">
+        <li><a href="assets/resultado-1-hd.webp" target="_blank" rel="noopener"><img src="assets/resultado-1-700.webp" srcset="assets/resultado-1-700.webp 700w, assets/resultado-1-hd.webp 1276w" sizes="(max-width:699px) 46vw, 30vw" width="700" height="700" loading="lazy" decoding="async" alt="Antes e depois: facetas em resina: proporção e harmonia do sorriso"></a></li>
+        <li><a href="assets/resultado-2-hd.webp" target="_blank" rel="noopener"><img src="assets/resultado-2-700.webp" srcset="assets/resultado-2-700.webp 700w, assets/resultado-2-hd.webp 1319w" sizes="(max-width:699px) 46vw, 30vw" width="700" height="700" loading="lazy" decoding="async" alt="Antes e depois: facetas em resina com aparência de dentes naturais"></a></li>
+        <li><a href="assets/resultado-3-hd.webp" target="_blank" rel="noopener"><img src="assets/resultado-3-700.webp" srcset="assets/resultado-3-700.webp 700w, assets/resultado-3-hd.webp 1312w" sizes="(max-width:699px) 46vw, 30vw" width="700" height="700" loading="lazy" decoding="async" alt="Antes e depois: dentes escurecidos tratados com resina"></a></li>
+        <li><a href="assets/resultado-4-hd.webp" target="_blank" rel="noopener"><img src="assets/resultado-4-700.webp" srcset="assets/resultado-4-700.webp 700w, assets/resultado-4-hd.webp 1320w" sizes="(max-width:699px) 46vw, 30vw" width="700" height="700" loading="lazy" decoding="async" alt="Antes e depois: correção de equilíbrio do sorriso"></a></li>
+        <li><a href="assets/resultado-5-hd.webp" target="_blank" rel="noopener"><img src="assets/resultado-5-700.webp" srcset="assets/resultado-5-700.webp 700w, assets/resultado-5-hd.webp 1320w" sizes="(max-width:699px) 46vw, 30vw" width="700" height="700" loading="lazy" decoding="async" alt="Antes e depois: ajustes pequenos de forma e proporção"></a></li>
+        <li><a href="assets/resultado-6-hd.webp" target="_blank" rel="noopener"><img src="assets/resultado-6-700.webp" srcset="assets/resultado-6-700.webp 700w, assets/resultado-6-hd.webp 1320w" sizes="(max-width:699px) 46vw, 30vw" width="700" height="700" loading="lazy" decoding="async" alt="Antes e depois: melhora da proporção dos dentes com facetas"></a></li>
+      </ul>
+      <p class="nota">Toque numa foto para ver em tamanho maior.</p>
+    </div>
+  </section>
+
+  <section class="sec escuro" id="videos" aria-labelledby="t-videos">
+    <div class="wrap">
+      <div class="videos-cab">
+        <div>
+          <h2 class="h2" id="t-videos">Vídeos</h2>
+          <p class="lead" style="color:#D6D6D6">A Dra. Larissa mostra o processo das facetas e responde dúvidas comuns.</p>
+        </div>
+        <a class="btn btn-linha" style="color:#fff;border-color:rgba(255,255,255,.7)" href="https://www.instagram.com/dralarissa.dentista/reels/" target="_blank" rel="noopener">Todos os vídeos no Instagram</a>
+      </div>
+      <ul class="videos-faixa" role="region" tabindex="0" aria-label="Vídeos da Dra. Larissa Amaral">
+        <li><figure>
+          <video controls preload="none" playsinline poster="videos/DaV2EFZBQ7p.webp" width="720" height="1280" aria-label="Retrabalho de facetas em resina"><source src="videos/DaV2EFZBQ7p.mp4" type="video/mp4"></video>
+          <figcaption>Retrabalho de facetas em resina<span>0:58 · <a href="https://www.instagram.com/reel/DaV2EFZBQ7p/" target="_blank" rel="noopener">ver no Instagram</a></span></figcaption>
+        </figure></li>
+        <li><figure>
+          <video controls preload="none" playsinline poster="videos/DbMEu0HguCr.webp" width="720" height="1280" aria-label="Antes de fazer facetas, assista"><source src="videos/DbMEu0HguCr.mp4" type="video/mp4"></video>
+          <figcaption>Antes de fazer facetas, assista<span>1:01 · <a href="https://www.instagram.com/reel/DbMEu0HguCr/" target="_blank" rel="noopener">ver no Instagram</a></span></figcaption>
+        </figure></li>
+        <li><figure>
+          <video controls preload="none" playsinline poster="videos/Dai9bOrS6EW.webp" width="720" height="1280" aria-label="Naturalidade se constrói com técnica"><source src="videos/Dai9bOrS6EW.mp4" type="video/mp4"></video>
+          <figcaption>Naturalidade se constrói com técnica<span>1:09 · <a href="https://www.instagram.com/reel/Dai9bOrS6EW/" target="_blank" rel="noopener">ver no Instagram</a></span></figcaption>
+        </figure></li>
+        <li><figure>
+          <video controls preload="none" playsinline poster="videos/DaQ0rcZSVRo.webp" width="720" height="1280" aria-label="Um sorriso com naturalidade"><source src="videos/DaQ0rcZSVRo.mp4" type="video/mp4"></video>
+          <figcaption>Um sorriso com naturalidade<span>1:02 · <a href="https://www.instagram.com/reel/DaQ0rcZSVRo/" target="_blank" rel="noopener">ver no Instagram</a></span></figcaption>
+        </figure></li>
+        <li><figure>
+          <video controls preload="none" playsinline poster="videos/Da3pvmfOG8g.webp" width="720" height="1280" aria-label="Quem tem lentes em resina pode tomar café?"><source src="videos/Da3pvmfOG8g.mp4" type="video/mp4"></video>
+          <figcaption>Quem tem lentes em resina pode tomar café?<span>0:33 · <a href="https://www.instagram.com/reel/Da3pvmfOG8g/" target="_blank" rel="noopener">ver no Instagram</a></span></figcaption>
+        </figure></li>
+        <li><figure>
+          <video controls preload="none" playsinline poster="videos/Dbge643xwfq.webp" width="720" height="1280" aria-label="O processo por trás do resultado"><source src="videos/Dbge643xwfq.mp4" type="video/mp4"></video>
+          <figcaption>O processo por trás do resultado<span>1:35 · <a href="https://www.instagram.com/reel/Dbge643xwfq/" target="_blank" rel="noopener">ver no Instagram</a></span></figcaption>
+        </figure></li>
+      </ul>
     </div>
   </section>
 
@@ -389,6 +461,7 @@ details[open]::details-content{block-size:auto}
     </div>
   </section>
 </main>
+<script>document.addEventListener('play',e=>document.querySelectorAll('video').forEach(v=>{if(v!==e.target)v.pause()}),true)</script>
 
 <footer class="rodape escuro">
   <div class="wrap">
